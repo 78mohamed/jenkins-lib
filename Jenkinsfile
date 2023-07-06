@@ -1,4 +1,4 @@
-def utils = load 'utils.groovy'
+def utils = load './utils.groovy'
 
 pipeline {
   agent any
