@@ -1,17 +1,15 @@
-def greet(name) {
-    echo "Hello, ${name}!"
-}
+def utils = load 'utils.groovy'
 
 pipeline {
-    agent any
-
-    stages {
-        stage('Greet') {
-            steps {
-                script {
-                    greet("Jenkins")
-                }
-            }
+  agent any
+  
+  stages {
+    stage('Say Hello') {
+      steps {
+        script {
+          utils.sayHello('Jenkins')
         }
+      }
     }
+  }
 }
