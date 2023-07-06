@@ -6,9 +6,11 @@ pipeline {
   stages {
     stage('Say Hello') {
       steps {
-        script {
-          def sayHello = utils.sayHello
-          sayHello('Jenkins')
+        node {
+          script {
+            def sayHello = utils.sayHello
+            sayHello('Jenkins')
+          }
         }
       }
     }
