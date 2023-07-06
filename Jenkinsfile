@@ -1,4 +1,4 @@
-def utils = load './utils.groovy'
+def utils = load 'utils.groovy'
 
 pipeline {
   agent any
@@ -7,7 +7,8 @@ pipeline {
     stage('Say Hello') {
       steps {
         script {
-          utils.sayHello('Jenkins')
+          def sayHello = utils.sayHello
+          sayHello('Jenkins')
         }
       }
     }
